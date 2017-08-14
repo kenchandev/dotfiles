@@ -94,6 +94,7 @@ alias be='bundle exec'       		# Shortcut for Ruby environment activation.
 alias dc='docker-compose'    		# Invoke docker-compose.
 alias clr='clear;echo "Currently logged in on $(tty), as $(whoami) in directory $(pwd)."'
 alias svim="sudo vim"						# Run vim as super user.
+alias virtualenv3="virtualenv -p python3"
 
 # MACVIM
 alias vim='mvim -v'
