@@ -116,23 +116,6 @@ alias gd='git diff | $GIT_EDITOR -'
 alias gmv='git mv'
 alias gho='$(git remote -v 2> /dev/null | grep github | sed -e "s/.*git\:\/\/\([a-z]\.\)*/\1/" -e "s/\.git.*//g" -e "s/.*@\(.*\)$/\1/g" | tr ":" "/" | tr -d "\011" | sed -e "s/^/open http:\/\//g" | uniq)'
 
-exip () {
-  # Gather external ip address.
-  echo -n "Current External IP: "
-  curl -s -m 5 http://myip.dk | grep "ha4" | sed -e 's/.*ha4">//g' -e 's/<\/span>.*//g'
-}
+fpath=($HOME/.functions "${fpath[@]}")
 
-ips () {
-  # Determine local IP address.
-  ifconfig | grep "inet " | awk '{ print $2 }'
-}
-
-killit() {
-  # Kills any process that matches a regexp passed to it.
-  ps aux | grep -v "grep" | grep "$@" | awk '{print $2}' | xargs sudo kill
-}
-
-mkdircd () {
-  mkdir -p "$@" && cd "$@"
-}
-
+autoload -U $HOME/.functions/*(:t)

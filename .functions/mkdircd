@@ -1,0 +1,3 @@
+mkdircd () {
+  mkdir -p "$@" && cd "$@"
+}

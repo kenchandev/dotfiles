@@ -1,0 +1,6 @@
+exip() {
+  # Gather external ip address.
+  echo -n "Current External IP: "
+  curl -s http://whatismijnip.nl |cut -d " " -f 5
+}
+
