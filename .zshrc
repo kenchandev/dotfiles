@@ -91,13 +91,12 @@ alias df='df -h'            		# Disk free, in gigabytes, not bytes.
 alias du='du -h -c'         		# Calculate total disk usage for a folder.
 alias sgi='sudo gem install' 		# Install Ruby gems.
 alias be='bundle exec'       		# Shortcut for Ruby environment activation.
-alias dc='docker-compose'    		# Invoke docker-compose.
 alias clr='clear;echo "Currently logged in on $(tty), as $(whoami) in directory $(pwd)."'
 alias svim="sudo vim"						# Run vim as super user.
 alias virtualenv3="virtualenv -p python3"
 
-# MACVIM
-alias vim='mvim -v'
+source $HOME/.docker/aliases.zsh
+source $HOME/.vim/aliases.zsh
 
 # GIT ALIASES
 alias g=git
