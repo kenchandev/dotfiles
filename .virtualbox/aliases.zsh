@@ -1,0 +1,1 @@
+alias vboxmodhd='VBoxManage modifyhd'
