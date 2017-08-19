@@ -6,11 +6,16 @@ brew 'yarn', args: [ '--ignore-dependencies' ]
 
 cask_args appdir: '/Applications'
 
+cask 'adobe-reader'
 cask 'atom'
+cask 'docker'
+cask 'docker-toolbox'
 cask 'firefox'
 cask 'google-chrome'
+cask 'google-drive'
 cask 'hyper'
 cask 'mapbox-studio'
+cask 'mysqlworkbench'
 cask 'slack'
 cask 'vagrant'
 cask 'virtualbox'
