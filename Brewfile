@@ -7,6 +7,7 @@ brew 'yarn', args: [ '--ignore-dependencies' ]
 cask_args appdir: '/Applications'
 
 cask 'adobe-reader'
+cask 'android-studio'
 cask 'atom'
 cask 'docker'
 cask 'docker-toolbox'
