@@ -99,6 +99,7 @@ source $HOME/.docker/aliases.zsh
 source $HOME/.vim/aliases.zsh
 source $HOME/.gitscm/aliases.zsh
 source $HOME/.react-native/aliases.zsh
+source $HOME/.tmux/aliases.zsh
 source $HOME/.vagrant/aliases.zsh
 source $HOME/.virtualbox/aliases.zsh
 
