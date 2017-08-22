@@ -103,6 +103,7 @@ source $HOME/.react-native/aliases.zsh
 source $HOME/.tmux/aliases.zsh
 source $HOME/.vagrant/aliases.zsh
 source $HOME/.virtualbox/aliases.zsh
+source $HOME/.xcode/aliases.zsh
 source $HOME/.yarn/aliases.zsh
 
 fpath=($HOME/.functions "${fpath[@]}")
