@@ -95,16 +95,22 @@ alias clr='clear;echo "Currently logged in on $(tty), as $(whoami) in directory 
 alias svim="sudo vim"						# Run vim as super user.
 alias virtualenv3="virtualenv -p python3"
 
-source $HOME/.docker/aliases.zsh
-source $HOME/.vim/aliases.zsh
-source $HOME/.gitscm/aliases.zsh
-source $HOME/.npm/aliases.zsh
-source $HOME/.react-native/aliases.zsh
-source $HOME/.tmux/aliases.zsh
-source $HOME/.vagrant/aliases.zsh
-source $HOME/.virtualbox/aliases.zsh
-source $HOME/.xcode/aliases.zsh
-source $HOME/.yarn/aliases.zsh
+files=(
+  $HOME/.docker/aliases.zsh
+  $HOME/.vim/aliases.zsh
+  $HOME/.gitscm/aliases.zsh
+  $HOME/.npm/aliases.zsh
+  $HOME/.react-native/aliases.zsh
+  $HOME/.tmux/aliases.zsh
+  $HOME/.vagrant/aliases.zsh
+  $HOME/.virtualbox/aliases.zsh
+  $HOME/.xcode/aliases.zsh
+  $HOME/.yarn/aliases.zsh
+)
+
+for file in ${files[@]}; do
+  [[ -s $file ]] && source $file
+done
 
 fpath=($HOME/.functions "${fpath[@]}")
 
