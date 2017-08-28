@@ -89,6 +89,7 @@ files=(
   $HOME/.gitscm/aliases.zsh
   $HOME/.helpers/aliases.zsh
   $HOME/.npm/aliases.zsh
+  $HOME/.pipe/aliases.zsh
   $HOME/.react-native/aliases.zsh
   $HOME/.tmux/aliases.zsh
   $HOME/.vagrant/aliases.zsh
