@@ -1,3 +1,4 @@
+brew 'flow'
 brew 'git'
 # Override default Vim installation.
 # By default, OSX has an older version of Vim installed.
@@ -5,6 +6,7 @@ brew 'macvim', args: [ '--override-system-vim' ]
 brew 'python'
 brew 'python3'
 brew 'tmux'
+brew 'watchman'
 # Install yarn using nvm's version of Node.js.
 brew 'yarn', args: [ '--ignore-dependencies' ]
 
