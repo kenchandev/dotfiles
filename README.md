@@ -1,6 +1,6 @@
-<img src="dotfiles-logo.svg" alt="dotfiles logo" width="400">
+<p align="center"><img src="dotfiles-logo.svg" alt="dotfiles logo" width="400"></p>
 
-# dotfiles
+---
 
 ## Overview
 
