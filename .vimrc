@@ -118,7 +118,7 @@ vnoremap p "_dP
 let NERDTreeShowHidden = 1
 
 " Simplify JSX
-let g:user_emmet_leader_key='<Tab>'
+let g:user_emmet_leader_key = '<Tab>'
 let g:user_emmet_settings = {
 \  'javascript' : {
 \    'snippets' : {
