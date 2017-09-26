@@ -117,6 +117,22 @@ vnoremap p "_dP
 " Show hidden files in NERDTree explorer
 let NERDTreeShowHidden = 1
 
+" Simplify JSX
+let g:user_emmet_leader_key='<Tab>'
+let g:user_emmet_settings = {
+\  'javascript' : {
+\    'snippets' : {
+\      'jq' : "$(function() {\n\t${cursor}${child}\n});",
+\      'jq:each' : "$.each(arr, function(index, item)\n\t${child}\n});",
+\      'fn' : "(function() {\n\t${cursor}\n})();",
+\      'tm' : "setTimeout(function() {\n\t${cursor}\n}, 100);",
+\    },
+\  },
+\  'javascript.jsx' : {
+\    'extends' : 'jsx',
+\  },
+\}
+
 " Go crazy!
 if filereadable(expand("~/.vimrc.local"))
   " In your .vimrc.local, you might like:
