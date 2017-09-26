@@ -133,6 +133,18 @@ let g:user_emmet_settings = {
 \  },
 \}
 
+" Install ESLint locally as a development dependency
+" $ yarn add --dev eslint babel-eslint eslint-plugin-react
+" Configure ESLint (create a .eslintrc file)
+" $ eslint --init
+let g:ale_sign_error = '●' " Less aggressive than the default '>>'
+let g:ale_sign_warning = '.'
+let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
+
+" Install Prettier, an opinionated code formatter
+" $ yarn add --dev prettier eslint-config-prettier eslint-plugin-prettier
+autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
+
 " Go crazy!
 if filereadable(expand("~/.vimrc.local"))
   " In your .vimrc.local, you might like:
