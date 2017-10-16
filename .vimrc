@@ -140,6 +140,7 @@ let g:user_emmet_settings = {
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
 let g:ale_sign_warning = '.'
 let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
+let g:ale_emit_conflict_warnings = 0 " ALE conflicts with Syntastic. Uninstall it, or disable this warning via this statement.
 
 " Install Prettier, an opinionated code formatter
 " $ yarn add --dev prettier eslint-config-prettier eslint-plugin-prettier
