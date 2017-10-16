@@ -9,3 +9,4 @@ alias clr='clear;echo "Currently logged in on $(tty), as $(whoami) in directory 
 alias svim="sudo vim"           # Run vim as super user.
 alias virtualenv3="virtualenv -p python3"
 alias cpdir="cp -R"
+alias du-ls="find . -maxdepth 1 -type d -mindepth 1 -exec du -hs {} \;" # Calculate disk usage per folder/file found in current directory.
