@@ -1,4 +1,6 @@
-ips() {
+#!/bin/sh
+
+ips () {
   # Determine local IP address.
   ifconfig | grep "inet " | awk '{ print $2 }'
 }
