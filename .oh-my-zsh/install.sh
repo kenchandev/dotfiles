@@ -14,6 +14,9 @@ then
 
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   fi
+
+  echo "Changing Shell to ZSH"
+  chsh -s `which zsh`
 fi
 
 exit 0

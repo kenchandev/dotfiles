@@ -84,23 +84,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-files=(
-  $HOME/.docker/aliases.zsh
-  $HOME/.gitscm/aliases.zsh
-  $HOME/.helpers/aliases.zsh
-  $HOME/.npm/aliases.zsh
-  $HOME/.pipe/aliases.zsh
-  $HOME/.react-native/aliases.zsh
-  $HOME/.tmux/aliases.zsh
-  $HOME/.vagrant/aliases.zsh
-  $HOME/.vim/aliases.zsh
-  $HOME/.virtualbox/aliases.zsh
-  $HOME/.xcode/aliases.zsh
-  $HOME/.yarn/aliases.zsh
-)
-
-for file in ${files[@]}; do
-  [[ -s $file ]] && source $file
+find . -type f \( -iname "aliases.zsh" \) | while read FILE; do
+  [[ -s $FILE ]] && source $FILE
 done
 
 fpath=($HOME/.functions "${fpath[@]}")
