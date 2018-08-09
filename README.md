@@ -12,4 +12,6 @@ Coming Soon...
 
 ## Thanks
 
-Coming Soon...
+[Denys Dovhan](https://github.com/denysdovhan)
+[Zach Holman](https://github.com/holman)
+[Jordan Eldredge](https://github.com/captbaritone)

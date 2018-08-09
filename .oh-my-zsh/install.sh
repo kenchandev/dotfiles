@@ -18,5 +18,3 @@ then
   echo "Changing Shell to ZSH"
   chsh -s `which zsh`
 fi
-
-exit 0

@@ -2,7 +2,6 @@
 
 EXCLUDED_SYMLINK_DIRS=(\
   fonts \
-  .setup \
   .nvm \
   .homebrew \
   .git \
@@ -57,44 +56,44 @@ function installSoftware () {
   $PWD/install
 }
 
-function dot_path () {
-    echo "$HOME/.$1"
+function linkPath () {
+  echo "$HOME/$1"
 }
 
-# Links the passed filename to its new location
+# Links the passed filename to its new location.
 function link () {
-    local filename=$1
-    if [[ ! -e $filename ]]; then
-        echo "$filename doesn't exist"
-        return
-    fi
+  local filepath=$1
+  local filename=$(basename $1)
 
-    local path=$(dot_path $filename)
-    if [[ -f $path ]] && [[ ! -L $path ]]; then
-        local localpath=$(local_path $filename)
-        mv $path $localpath
-        echo "Moved: $path to $localpath"
-    fi
+  if [[ ! -e $filepath ]]; then
+    echo "$filepath doesn't exist..."
+    return
+  fi
 
-    if [[ -L $path ]]; then
-        echo "Ok: $path"
-    elif [[ ! -e $path ]]; then
-        echo "Linking: $filename to $path"
-        ln -s $PWD/$filename $path
-    fi
+  local path=$(linkPath $filepath)
+
+  if [[ -f $path ]] && [[ ! -L $path ]]; then
+    rsync -R $filepath $HOME/
+
+    echo "Copied: $filepath to $path"
+  fi
+
+  if [[ -L $path ]]; then
+    echo "Ok: $path"
+  elif [[ ! -e $path ]]; then
+    echo "Linking: $filename to $path"
+    ln -s $filepath $path
+  fi
 }
 
-# Loops through and link all files without links
+# Loops through and link all files without links.
 function installLinks () {
   echo "Linking dotfiles into place:\n"
 
-  find . -type d \( $(for DIR in ${EXCLUDED_SYMLINK_DIRS[@]}; do printf " -path */$DIR -o "; done) -false \) -prune -a -o -type f \( $(for FILE in ${EXCLUDED_SYMLINK_FILES[@]}; do printf " ! -iname $FILE "; done) \) -prune | while read FILE; do
-    echo $FILE
-  done
+  find . -type d \( $(for DIR in ${EXCLUDED_SYMLINK_DIRS[@]}; do printf " -path */$DIR -o "; done) -false \) -prune -a -o -type f \( $(for FILE in ${EXCLUDED_SYMLINK_FILES[@]}; do printf " ! -iname $FILE "; done) \) -prune | while read FILE_PATH; do
+    rsync -R $FILE_PATH $HOME/
 
-  for FILE in ${FILES[@]}
-  do
-    link $FILE
+    link $FILE_PATH
   done
 }
 
@@ -105,7 +104,7 @@ then
 
   installHomebrew
 
-  if source install | while read -r data; do info "$data"; done
+  if source install | while read -r DATA; do info "$DATA"; done
   then
     printSuccess "Dependencies Installed"
 
