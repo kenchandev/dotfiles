@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 # Run Homebrew through the Brewfile
 echo "› brew bundle"
 brew bundle

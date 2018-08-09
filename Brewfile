@@ -1,3 +1,5 @@
+tap 'homebrew/cask'
+
 brew 'flow'
 brew 'git'
 # Override default Vim installation.
@@ -13,7 +15,7 @@ brew 'yarn', args: [ '--ignore-dependencies' ]
 
 cask_args appdir: '/Applications'
 
-cask 'adobe-reader'
+cask 'adobe-acrobat-reader'
 cask 'android-platform-tools'
 cask 'android-sdk'
 cask 'android-studio'
@@ -27,7 +29,7 @@ cask 'firefox'
 cask 'framer'
 cask 'goland'
 cask 'google-chrome'
-cask 'google-drive'
+cask 'google-backup-and-sync'
 cask 'hyper'
 cask 'intellij-idea'
 cask 'iterm2'

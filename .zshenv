@@ -1,11 +1,3 @@
-# Set PATH for Python 3.6.
-PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
-export PATH
-
-# Set PATH for Python 2.7.
-PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-export PATH
-
 # Load nvm.
 # https://github.com/creationix/nvm
 export NVM_DIR="$HOME/.nvm"

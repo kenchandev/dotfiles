@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 EXCLUDED_SYMLINK_DIRS=(\
   fonts \
   .nvm \
@@ -37,7 +39,7 @@ function installHomebrew () {
     printInfo "Installing Homebrew"
 
     # Install the correct homebrew for each OS type
-    if test "$(uname -s)" === "Darwin"
+    if test "$(uname -s)" == "Darwin"
     then
       ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     elif test "$(expr substr $(uname -s) 1 5)" = "Linux"
@@ -60,6 +62,10 @@ function linkPath () {
   echo "$HOME/$1"
 }
 
+function absoluteCurrentPath () {
+  echo "$PWD/$1"
+}
+
 # Links the passed filename to its new location.
 function link () {
   local filepath=$1
@@ -70,9 +76,14 @@ function link () {
     return
   fi
 
+  if [[ -d $filepath ]]; then
+    echo "Directory..."
+    return
+  fi
+
   local path=$(linkPath $filepath)
 
-  if [[ -f $path ]] && [[ ! -L $path ]]; then
+  if [[ ! -f $path ]]; then
     rsync -R $filepath $HOME/
 
     echo "Copied: $filepath to $path"
@@ -80,9 +91,9 @@ function link () {
 
   if [[ -L $path ]]; then
     echo "Ok: $path"
-  elif [[ ! -e $path ]]; then
-    echo "Linking: $filename to $path"
-    ln -s $filepath $path
+  elif [[ -f $path ]] && [[ ! -L $path ]]; then
+    echo "Linking: $filepath to $path"
+    ln -sf $(absoluteCurrentPath $filepath) $path
   fi
 }
 
@@ -91,8 +102,6 @@ function installLinks () {
   echo "Linking dotfiles into place:\n"
 
   find . -type d \( $(for DIR in ${EXCLUDED_SYMLINK_DIRS[@]}; do printf " -path */$DIR -o "; done) -false \) -prune -a -o -type f \( $(for FILE in ${EXCLUDED_SYMLINK_FILES[@]}; do printf " ! -iname $FILE "; done) \) -prune | while read FILE_PATH; do
-    rsync -R $FILE_PATH $HOME/
-
     link $FILE_PATH
   done
 }
@@ -104,7 +113,7 @@ then
 
   installHomebrew
 
-  if source install | while read -r DATA; do info "$DATA"; done
+  if source ./install.sh | while read -r DATA; do printInfo "$DATA"; done
   then
     printSuccess "Dependencies Installed"
 
@@ -113,3 +122,5 @@ then
     printFail "Error Installing Dependencies"
   fi
 fi
+
+exit 1
