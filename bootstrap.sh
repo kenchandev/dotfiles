@@ -61,17 +61,21 @@ function installOhMyZsh () {
   # Check for zsh
   if test ! $(grep /zsh$ /etc/shells | wc -l)
   then
-    # Check for oh-my-zsh
-    if test ! $($ZSH)
-    then
-      echo "  Installing oh-my-zsh..."
+    printInfo "Installing ZSH..."
 
-      sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    fi
-
-    echo "Changing Shell to ZSH"
-    chsh -s `which zsh`
+    brew install zsh zsh-completions
   fi
+
+  # Check for oh-my-zsh
+  if [[ ! -n "$ZSH" ]] && [[ -d "$ZSH" ]]
+  then
+    printInfo "Installing oh-my-zsh..."
+
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  fi
+
+  printInfo "Changing Shell to ZSH..."
+  chsh -s `which zsh`
 }
 
 function installSoftware () {
@@ -132,8 +136,8 @@ if [ "$(uname -s)" == "Darwin" ]
 then
   printInfo "Installing Dependencies"
 
-  installOhMyZsh
   installHomebrew
+  installOhMyZsh
 
   if source ./install.sh | while read -r DATA; do printInfo "$DATA"; done
   then
