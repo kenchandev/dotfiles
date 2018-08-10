@@ -78,12 +78,26 @@ function installOhMyZsh () {
     printInfo "Installing oh-my-zsh..."
 
     curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | bash
-
-    curl -f https://raw.githubusercontent.com/denysdovhan/spaceship-prompt/master/spaceship.zsh > $HOME/.oh-my-zsh/themes/spaceship.zsh-theme
   fi
 
   printInfo "Changing Shell to ZSH..."
   chsh -s `which zsh`
+}
+
+function installSpaceshipTheme () {
+  local themesDirectory=$HOME/.oh-my-zsh/themes
+
+  if [[ -d $themesDirectory ]]; then
+    if [[ -d $themesDirectory/spaceship-prompt ]]; then
+      rm -rf $themesDirectory/spaceship-prompt
+    fi
+
+    git clone https://github.com/denysdovhan/spaceship-prompt.git $themesDirectory/spaceship-prompt
+
+    ln -sf $themesDirectory/spaceship-prompt/spaceship.zsh-theme $themesDirectory/spaceship.zsh-theme
+  else
+    printFail "oh-my-zsh is not installed."
+  fi
 }
 
 function installSoftware () {
@@ -152,6 +166,7 @@ then
   then
     printSuccess "Dependencies Installed"
 
+    installSpaceshipTheme
     installLinks
   else
     printFail "Error Installing Dependencies"
