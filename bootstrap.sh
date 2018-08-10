@@ -79,7 +79,7 @@ function installOhMyZsh () {
 
     curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | bash
 
-    curl -f https://raw.githubusercontent.com/denysdovhan/spaceship-prompt/master/spaceship.zsh > $ZSH/themes/spaceship.zsh-theme
+    curl -f https://raw.githubusercontent.com/denysdovhan/spaceship-prompt/master/spaceship.zsh > $HOME/.oh-my-zsh/themes/spaceship.zsh-theme
   fi
 
   printInfo "Changing Shell to ZSH..."
