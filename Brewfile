@@ -43,9 +43,10 @@ cask 'slack'
 cask 'sublime-text'
 cask 'typora'
 cask 'vagrant'
-cask 'virtualbox'
+# Omitting due to known High Sierra installation issue. See https://github.com/Homebrew/homebrew-cask/issues/39369.
+# cask 'virtualbox'
 cask 'visual-studio-code'
 cask 'webstorm'
 
 # Requires 'virtualbox' Cask dependency to be installed prior.
-cask 'docker-toolbox'
+# cask 'docker-toolbox'
