@@ -33,10 +33,16 @@ function printFail () {
   printf "\r\033[2K  [ \033[0;31mFAIL\033[0m ] $1\n"
 }
 
+function installFonts () {
+  printInfo "Installing Fonts..."
+
+  find $PWD/fonts -mindepth 1 -name \*.ttf -exec cp {} $HOME/Library/Fonts \;
+}
+
 function installHomebrew () {
   if test ! $(which brew)
   then
-    printInfo "Installing Homebrew"
+    printInfo "Installing Homebrew..."
 
     # Install the correct homebrew for each OS type
     if test "$(uname -s)" == "Darwin"
@@ -47,7 +53,7 @@ function installHomebrew () {
       ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
     fi
   else
-    printInfo "Updating Homebrew"
+    printInfo "Updating Homebrew..."
 
     brew update
   fi
@@ -72,6 +78,8 @@ function installOhMyZsh () {
     printInfo "Installing oh-my-zsh..."
 
     curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | bash
+
+    curl -f https://raw.githubusercontent.com/denysdovhan/spaceship-prompt/master/spaceship.zsh > $ZSH/themes/spaceship.zsh-theme
   fi
 
   printInfo "Changing Shell to ZSH..."
@@ -136,6 +144,7 @@ if [ "$(uname -s)" == "Darwin" ]
 then
   printInfo "Installing Dependencies"
 
+  installFonts
   installHomebrew
   installOhMyZsh
 
