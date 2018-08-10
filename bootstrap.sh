@@ -67,11 +67,11 @@ function installOhMyZsh () {
   fi
 
   # Check for oh-my-zsh
-  if [[ ! -n "$ZSH" ]] && [[ -d "$ZSH" ]]
+  if [[ ! -n "$ZSH" ]] && [[ ! -d "$ZSH" ]]
   then
     printInfo "Installing oh-my-zsh..."
 
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | bash
   fi
 
   printInfo "Changing Shell to ZSH..."
