@@ -9,5 +9,7 @@ if test ! $(which gvm)
 then
   echo "  Installing gvm..."
 
-  ruby -e "$(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer | bash)"
+  curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer | bash
+
+  source $HOME/.gvm/scripts/gvm
 fi
