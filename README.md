@@ -1,6 +1,4 @@
-<p align="center"><img src="dotfiles.svg" alt="dotfiles logo" height="125"></p>
-
----
+<p align="center"><img src="dotfiles.svg" alt="dotfiles logo" height="200"></p>
 
 ## Overview
 
