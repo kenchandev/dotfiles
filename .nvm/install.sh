@@ -3,13 +3,15 @@
 # Node Version Manager (nvm)
 #
 # This executes the installation script for nvm.
+# https://github.com/creationix/nvm
 
 # Check for Node Version Manager
-if test ! $(which nvm)
-then
+if [[ ! $(which nvm) ]]; then
   echo "  Installing nvm..."
 
-  ruby -e "$(curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash)"
-fi
+  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
 
-exit 0
+  NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm.
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion.
+fi

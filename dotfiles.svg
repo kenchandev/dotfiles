@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="183px" height="224px" viewBox="0 0 183 224" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+  <title>dotfiles-logo</title>
+  <desc>Created with Sketch by Ken A. Chan.</desc>
+  <defs>
+    <path d="M149.907895,1.52470151e-15 L10,0 C4.4771525,2.79088747e-15 -6.76353751e-16,4.4771525 0,10 L0,214 C6.76353751e-16,219.522847 4.4771525,224 10,224 L173,224 C178.522847,224 183,219.522847 183,214 L183,33.1003584 L183,56.2007168 L126.815789,0 L149.907895,1.52470151e-15 Z"></path>
+  </defs>
+  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g>
+      <g>
+        <g fill="#2C3E50" fill-rule="nonzero">
+          <path d="M149.907895,1.52470151e-15 L10,0 C4.4771525,2.79088747e-15 -6.76353751e-16,4.4771525 0,10 L0,214 C6.76353751e-16,219.522847 4.4771525,224 10,224 L173,224 C178.522847,224 183,219.522847 183,214 L183,33.1003584 L183,56.2007168 L126.815789,0 L149.907895,1.52470151e-15 Z"></path>
+        </g>
+        <g>
+          <mask fill="white">
+            <use xlink:href="#path-1"></use>
+          </mask>
+          <circle fill="#16A085" fill-rule="nonzero" mask="url(#mask-2)" cx="91.5" cy="112.5" r="17.5"></circle>
+        </g>
+        <g transform="translate(127.000000, 0.000000)" fill="#16A085" fill-rule="nonzero">
+          <path d="M54.174685,54.1746848 L0,0 L0,46 C0,51.5228475 4.477153,56 10,56 L51.382264,56 L56,56 L54.174685,54.1746848 Z"></path>
+        </g>
+      </g>
+      <text fill="#16A085" font-family="Avenir-Heavy, Avenir" font-size="12" font-weight="600">
+        <tspan x="131" y="215">.dotfiles</tspan>
+      </text>
+    </g>
+  </g>
+</svg>

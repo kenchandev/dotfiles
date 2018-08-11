@@ -105,8 +105,8 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-    'hyperline',
-    'hyper-snazzy'
+    'hyperterm-atom-dark',
+    'hyperline'
   ],
 
   // in development, you can create a directory under
