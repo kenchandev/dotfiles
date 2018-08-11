@@ -3,10 +3,10 @@
 # Node Version Manager (nvm)
 #
 # This executes the installation script for nvm.
+# https://github.com/creationix/nvm
 
 # Check for Node Version Manager
-if test ! $(which nvm)
-then
+if [[ ! $(which nvm) ]]; then
   echo "  Installing nvm..."
 
   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
