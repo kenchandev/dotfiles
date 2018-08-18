@@ -103,6 +103,18 @@ function linkPath () {
   echo "$HOME/$1"
 }
 
+function installVundlePlugins () {
+  local bundleDir=$HOME/.vim/bundle
+
+  if [[ ! -d $bundleDir ]]; then
+    printInfo "Installing Vundle..."
+    git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+    printSuccess "Installed Vundle"
+  fi
+
+  vim +PluginInstall +qall
+}
+
 # Links the passed filename to its new location.
 function link () {
   local filepath=$1
@@ -159,6 +171,7 @@ if [ "$(uname -s)" == "Darwin" ]; then
 
     installSpaceshipTheme
     installLinks
+    installVundlePlugins
   else
     printFail "Could Not Install Dependencies"
   fi
