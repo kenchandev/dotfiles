@@ -2,6 +2,7 @@ tap 'homebrew/cask'
 
 brew 'flow'
 brew 'git'
+brew 'jq'
 # Override default Vim installation.
 # By default, OSX has an older version of Vim installed.
 brew 'macvim', args: [ '--override-system-vim' ]
