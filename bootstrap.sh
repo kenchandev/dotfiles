@@ -7,6 +7,7 @@ EXCLUDED_SYMLINK_DIRS=(\
   .nvm \
   .homebrew \
   .git \
+  vscode \
 )
 
 EXCLUDED_SYMLINK_FILES=(\
@@ -19,6 +20,21 @@ EXCLUDED_SYMLINK_FILES=(\
   README.md \
   bootstrap.sh \
   install.sh \
+)
+
+# $ code --list-extensions
+VSCODE_EXTS=(\
+  dbaeumer.vscode-eslint \
+  dunstontc.viml \
+  EditorConfig.EditorConfig \
+  esbenp.prettier-vscode \
+  GrapeCity.gc-excelviewer \
+  jpoissonnier.vscode-styled-components \
+  mgmcdermott.vscode-language-babel \
+  mikestead.dotenv \
+  robertohuertasm.vscode-icons \
+  robinbentley.sass-indented \
+  zhuangtongfa.Material-theme \
 )
 
 function printInfo () {
@@ -99,10 +115,6 @@ function installSpaceshipTheme () {
   fi
 }
 
-function linkPath () {
-  echo "$HOME/$1"
-}
-
 function installVundlePlugins () {
   local bundleDir=$HOME/.vim/bundle
 
@@ -115,10 +127,40 @@ function installVundlePlugins () {
   vim +PluginInstall +qall
 }
 
+function setupVsCode () {
+  local vsCodeDir="$HOME/Library/Application Support/Code/User"
+
+  if [[ ! $(which code) ]]; then
+    printFail "VSCode CLI Not Installed"
+    printFail "Please Install Before Installing Extensions"
+    return
+  fi
+
+  printInfo "Installing VSCode Extensions..."
+
+  for EXT in ${VSCODE_EXTS[@]}; do
+    code --install-extension $EXT
+  done
+
+  printSuccess "VSCode Extensions Installed"
+
+  printInfo "Linking VSCode Configurations..."
+
+  pushd "vscode"
+
+  find . | while read FILE_PATH; do
+    link "$vsCodeDir" "$FILE_PATH"
+  done
+
+  popd
+
+  printSuccess "Linked VSCode Configurations"
+}
+
 # Links the passed filename to its new location.
 function link () {
-  local filepath=$1
-  local filename=$(basename $1)
+  local filepath=$2
+  local filename=$(basename $2)
 
   if [[ ! -e $filepath ]]; then
     printFail "$filepath Not Found"
@@ -130,11 +172,11 @@ function link () {
     return
   fi
 
-  local path=$(linkPath $filepath)
+  local path=$1/$2
 
   if [[ ! -f $path ]]; then
     printInfo "Copying $filepath to $path..."
-    rsync -R $filepath $HOME/
+    rsync -R "$filepath" "$1/"
     printSuccess "Copied: $filepath to $path"
   fi
 
@@ -142,7 +184,7 @@ function link () {
     printInfo "Already Linked: $path"
   elif [[ -f $path ]] && [[ ! -L $path ]]; then
     printInfo "Linking $filepath to $path..."
-    ln -sf $PWD/$filepath $path
+    ln -sf "$PWD/$filepath" "$path"
     printSuccess "Linked: $filepath to $path"
   fi
 }
@@ -152,7 +194,7 @@ function installLinks () {
   printInfo "Linking dotfiles..."
 
   find . -type d \( $(for DIR in ${EXCLUDED_SYMLINK_DIRS[@]}; do printf " -path */$DIR -o "; done) -false \) -prune -a -o -type f \( $(for FILE in ${EXCLUDED_SYMLINK_FILES[@]}; do printf " ! -iname $FILE "; done) \) -prune | while read FILE_PATH; do
-    link $FILE_PATH
+    link "$HOME" "$FILE_PATH"
   done
 
   printSuccess "Linked dotfiles"
@@ -172,6 +214,7 @@ if [ "$(uname -s)" == "Darwin" ]; then
     installSpaceshipTheme
     installLinks
     installVundlePlugins
+    setupVsCode
   else
     printFail "Could Not Install Dependencies"
   fi
