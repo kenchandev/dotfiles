@@ -29,6 +29,7 @@ VSCODE_EXTS=(\
   EditorConfig.EditorConfig \
   esbenp.prettier-vscode \
   GrapeCity.gc-excelviewer \
+  joelday.docthis \
   jpoissonnier.vscode-styled-components \
   mgmcdermott.vscode-language-babel \
   mikestead.dotenv \
