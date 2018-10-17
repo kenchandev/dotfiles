@@ -84,7 +84,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-find . -type f \( -iname "aliases.zsh" \) | while read FILE; do
+find -L . -maxdepth 2 -type f \( -iname "aliases.zsh" \) | while read FILE; do
   [[ -s $FILE ]] && source $FILE
 done
 
