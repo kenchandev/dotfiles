@@ -1,4 +1,5 @@
 tap 'homebrew/cask'
+tap 'prisma/prisma'
 
 brew 'flow'
 brew 'git'
@@ -7,6 +8,7 @@ brew 'jq'
 # By default, OSX has an older version of Vim installed.
 brew 'macvim', args: [ '--override-system-vim' ]
 brew 'postgresql'
+brew 'prisma'
 brew 'python'
 brew 'python3'
 brew 'tmux'
