@@ -33,6 +33,7 @@ VSCODE_EXTS=(\
   jpoissonnier.vscode-styled-components \
   mgmcdermott.vscode-language-babel \
   mikestead.dotenv \
+  prisma.vscode-graphql \
   robertohuertasm.vscode-icons \
   robinbentley.sass-indented \
   zhuangtongfa.Material-theme \
