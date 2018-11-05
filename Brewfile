@@ -9,7 +9,7 @@ brew 'jq'
 brew 'macvim', args: [ '--override-system-vim' ]
 brew 'postgresql'
 brew 'prisma'
-brew 'python'
+brew 'python@2'
 brew 'python3'
 brew 'tmux'
 brew 'watchman'
