@@ -11,5 +11,7 @@ export GVM_DIR="$HOME/.gvm"
 # Load the default .profile.
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
 
+export PATH=/usr/local/anaconda3/bin:"$PATH"
+
 # Set Vim as default editor.
 export EDITOR="vim"
