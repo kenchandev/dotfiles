@@ -27,6 +27,7 @@ VSCODE_EXTS=(\
   dbaeumer.vscode-eslint \
   dunstontc.viml \
   EditorConfig.EditorConfig \
+  eg2.tslint \
   esbenp.prettier-vscode \
   GrapeCity.gc-excelviewer \
   joelday.docthis \
