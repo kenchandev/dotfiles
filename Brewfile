@@ -1,6 +1,7 @@
 tap 'homebrew/cask'
 tap 'prisma/prisma'
 
+brew 'awscli'
 brew 'flow'
 brew 'git'
 brew 'jq'
