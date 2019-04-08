@@ -1,7 +1,12 @@
 {
     "editor.formatOnSave": true,
+    "editor.minimap.enabled": true,
     "editor.tabSize": 2,
     "eslint.enable": true,
+    "file.associations": {
+      "Dockerfile-dev": "dockerfile",
+      "Dockerfile-prod": "dockerfile"
+    },
     "prettier.requireConfig": true,
     "workbench.iconTheme": "vscode-icons",
     "workbench.colorTheme": "One Dark Pro",
