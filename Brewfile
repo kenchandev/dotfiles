@@ -30,10 +30,12 @@ cask 'docker'
 cask 'dropbox'
 cask 'firefox'
 cask 'framer'
+cask 'gimp'
 cask 'google-chrome'
 cask 'google-backup-and-sync'
 cask 'graphql-playground'
 cask 'hyper'
+cask 'inkscape'
 cask 'iterm2'
 cask 'java'
 cask 'mysqlworkbench'
@@ -48,6 +50,8 @@ cask 'vagrant'
 # Omitting due to known High Sierra installation issue. See https://github.com/Homebrew/homebrew-cask/issues/39369.
 # cask 'virtualbox'
 cask 'visual-studio-code'
+# Required for Inkscape installation.
+cask 'xquartz'
 
 # Requires 'virtualbox' Cask dependency to be installed prior.
 # cask 'docker-toolbox'
