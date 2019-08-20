@@ -120,6 +120,13 @@ function installSpaceshipTheme () {
   fi
 }
 
+function installVirtualEnv () {
+  printInfo "Installing virtualenv..."
+  pip install virtualenv
+  pip install virtualenvwrapper
+  printSuccess "Installed virtualenv"
+}
+
 function installVundlePlugins () {
   local bundleDir=$HOME/.vim/bundle
 
@@ -219,6 +226,7 @@ if [ "$(uname -s)" == "Darwin" ]; then
     installSpaceshipTheme
     installLinks
     installVundlePlugins
+    installVirtualEnv
     setupVsCode
   else
     printFail "Could Not Install Dependencies"

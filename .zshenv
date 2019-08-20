@@ -8,6 +8,11 @@ export NVM_DIR="$HOME/.nvm"
 export GVM_DIR="$HOME/.gvm"
 [[ -s "$GVM_DIR/scripts/gvm" ]] && source "$GVM_DIR/scripts/gvm"
 
+# Load virtualenvwrapper.
+export WORKON_HOME="$HOME/.virtualenvs"
+export VIRTUALENVWRAPPER_SCRIPT="/usr/local/bin/virtualenvwrapper.sh"
+source /usr/local/bin/virtualenvwrapper_lazy.sh
+
 # Load the default .profile.
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
 
