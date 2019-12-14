@@ -5,6 +5,7 @@ brew 'awscli'
 brew 'flow'
 brew 'git'
 brew 'jq'
+brew 'libomp'
 # Override default Vim installation.
 # By default, OSX has an older version of Vim installed.
 brew 'macvim', args: [ '--override-system-vim' ]
