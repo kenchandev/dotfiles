@@ -4,6 +4,7 @@ tap 'prisma/prisma'
 brew 'awscli'
 brew 'flow'
 brew 'git'
+brew 'git-lfs'
 brew 'jq'
 brew 'libomp'
 # Override default Vim installation.
