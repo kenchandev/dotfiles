@@ -201,6 +201,20 @@ function link () {
   fi
 }
 
+function installGitLfs () {
+  if [[ ! $(which git) ]]; then
+    printFail "Git Not Installed"
+    printFail "Please Install Before Installing Git LFS"
+    return
+  fi
+
+  printInfo "Installing Git LFS..."
+
+  git lfs install
+
+  printSuccess "Git LFS Installed"
+}
+
 # Loops through and link all files without links.
 function installLinks () {
   printInfo "Linking dotfiles..."
@@ -223,6 +237,7 @@ if [ "$(uname -s)" == "Darwin" ]; then
   if source ./install.sh | while read -r DATA; do printInfo "$DATA"; done; then
     printSuccess "Dependencies Installed"
 
+    installGitLfs
     installSpaceshipTheme
     installLinks
     installVundlePlugins
