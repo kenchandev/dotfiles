@@ -31,6 +31,7 @@ VSCODE_EXTS=(\
   esbenp.prettier-vscode \
   GrapeCity.gc-excelviewer \
   jakeboone02.cypher-query-language \
+  jamesbirtles.svelte-vscode \
   joelday.docthis \
   jpoissonnier.vscode-styled-components \
   mgmcdermott.vscode-language-babel \
