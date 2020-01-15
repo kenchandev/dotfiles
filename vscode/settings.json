@@ -20,5 +20,7 @@
     "window.zoomLevel": 1,
     "workbench.colorTheme": "One Dark Pro",
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "workbench.iconTheme": "vscode-icons"
+    "workbench.enableExperiments": false,
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.settings.enableNaturalLanguageSearch": false
 }
