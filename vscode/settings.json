@@ -1,5 +1,7 @@
 {
+    "editor.detectIndentation": true,
     "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
     "editor.minimap.enabled": true,
     "editor.tabSize": 2,
     "eslint.enable": true,
