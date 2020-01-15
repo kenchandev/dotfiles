@@ -1,4 +1,5 @@
 {
+    "breadcrumbs.enabled": true,
     "editor.detectIndentation": true,
     "editor.formatOnSave": true,
     "editor.insertSpaces": true,
@@ -12,7 +13,9 @@
     "prettier.requireConfig": true,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
-    "workbench.iconTheme": "vscode-icons",
+    "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}",
+    "window.zoomLevel": 1,
     "workbench.colorTheme": "One Dark Pro",
-    "window.zoomLevel": 1
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.iconTheme": "vscode-icons"
 }
