@@ -10,7 +10,6 @@ brew 'libomp'
 # Override default Vim installation.
 # By default, OSX has an older version of Vim installed.
 brew 'macvim', args: [ '--override-system-vim' ]
-brew 'postgresql'
 brew 'prisma'
 brew 'python@2'
 brew 'python3'
@@ -41,7 +40,6 @@ cask 'inkscape'
 cask 'iterm2'
 cask 'java'
 cask 'mysqlworkbench'
-cask 'pgadmin4'
 cask 'postman'
 cask 'sketch'
 cask 'sketch-toolbox'
