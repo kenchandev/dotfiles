@@ -7,6 +7,8 @@ brew 'git'
 brew 'git-lfs'
 brew 'jq'
 brew 'libomp'
+# After installation, create symlinks for the utilities.
+brew 'libpq', link: true, args: [ '--force' ]
 # Override default Vim installation.
 # By default, OSX has an older version of Vim installed.
 brew 'macvim', args: [ '--override-system-vim' ]
