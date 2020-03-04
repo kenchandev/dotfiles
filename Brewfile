@@ -2,6 +2,7 @@ tap 'homebrew/cask'
 tap 'prisma/prisma'
 
 brew 'awscli'
+brew 'certbot'
 brew 'flow'
 brew 'git'
 brew 'git-lfs'
