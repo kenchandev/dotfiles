@@ -18,6 +18,7 @@ brew 'python@2'
 brew 'python3'
 brew 'tmux'
 brew 'watchman'
+brew 'wrk'
 # Install yarn using nvm's version of Node.js.
 brew 'yarn', args: [ '--ignore-dependencies' ]
 
