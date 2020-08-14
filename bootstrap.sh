@@ -37,6 +37,7 @@ VSCODE_EXTS=(\
   mgmcdermott.vscode-language-babel \
   mikestead.dotenv \
   ms-vsliveshare.vsliveshare \
+  orta.vscode-jest \
   prisma.vscode-graphql \
   robertohuertasm.vscode-icons \
   robinbentley.sass-indented \
