@@ -6,6 +6,7 @@ brew 'certbot'
 brew 'flow'
 brew 'git'
 brew 'git-lfs'
+brew 'gnu-sed'
 brew 'jq'
 brew 'libomp'
 # After installation, create symlinks for the utilities.
