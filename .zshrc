@@ -91,3 +91,7 @@ done
 fpath=($HOME/.functions "${fpath[@]}")
 
 autoload -U $HOME/.functions/*(:t)
+
+# GNU `sed` is installed as `gsed` on MacOSX.
+# To execute the command as `sed` rather than as `gsed`, add a `gnubin` directory to the PATH from `.zshrc`.
+PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH"
