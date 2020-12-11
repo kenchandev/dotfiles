@@ -14,6 +14,7 @@ brew 'libpq', link: true, args: [ '--force' ]
 # Override default Vim installation.
 # By default, OSX has an older version of Vim installed.
 brew 'macvim', args: [ '--override-system-vim' ]
+brew 'minikube'
 brew 'prisma'
 brew 'python@2'
 brew 'python3'
