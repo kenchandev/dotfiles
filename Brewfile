@@ -8,6 +8,7 @@ brew 'git'
 brew 'git-lfs'
 brew 'gnu-sed'
 brew 'jq'
+brew 'just'
 brew 'libomp'
 # After installation, create symlinks for the utilities.
 brew 'libpq', link: true, args: [ '--force' ]
