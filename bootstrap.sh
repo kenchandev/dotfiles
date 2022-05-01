@@ -34,6 +34,7 @@ VSCODE_EXTS=(\
   jamesbirtles.svelte-vscode \
   joelday.docthis \
   jpoissonnier.vscode-styled-components \
+  matklad.rust-analyzer \
   mgmcdermott.vscode-language-babel \
   mikestead.dotenv \
   ms-vsliveshare.vsliveshare \
@@ -41,6 +42,9 @@ VSCODE_EXTS=(\
   prisma.vscode-graphql \
   robertohuertasm.vscode-icons \
   robinbentley.sass-indented \
+  serayuzgur.crates \
+  tamasfe.even-better-toml \
+  vadimcn.vscode-lldb \
   zhuangtongfa.Material-theme \
 )
 
@@ -245,6 +249,14 @@ if [ "$(uname -s)" == "Darwin" ]; then
     installVundlePlugins
     installVirtualEnv
     setupVsCode
+
+    rustup-init -y
+    source $HOME/.cargo/env
+    rustup completions zsh cargo > ~/.zfunc/_cargo
+    rustup completions zsh > ~/.zfunc/_rustup
+    rustup install nightly # cargo-expand requires a nightly toolchain.
+    exec zsh
+    cargo install cargo-workspaces cargo-expand
   else
     printFail "Could Not Install Dependencies"
   fi
