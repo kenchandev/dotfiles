@@ -92,6 +92,18 @@ fpath=($HOME/.functions "${fpath[@]}")
 
 autoload -U $HOME/.functions/*(:t)
 
+fpath+=~/.zfunc
+
+# compinit checks zcompdump just once a day.
+# https://gist.github.com/ctechols/ca1035271ad134841284
+autoload -Uz compinit
+
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+
+compinit -C
+
 # GNU `sed` is installed as `gsed` on MacOSX.
 # To execute the command as `sed` rather than as `gsed`, add a `gnubin` directory to the PATH from `.zshrc`.
 PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH"
