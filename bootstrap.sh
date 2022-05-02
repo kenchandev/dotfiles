@@ -25,6 +25,7 @@ EXCLUDED_SYMLINK_FILES=(\
 # $ code --list-extensions
 VSCODE_EXTS=(\
   dbaeumer.vscode-eslint \
+  denoland.vscode-deno \
   dunstontc.viml \
   EditorConfig.EditorConfig \
   eg2.tslint \
