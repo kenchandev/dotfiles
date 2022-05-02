@@ -1,26 +1,38 @@
 {
-    "breadcrumbs.enabled": true,
-    "editor.detectIndentation": true,
-    "editor.formatOnSave": true,
-    "editor.insertSpaces": true,
-    "editor.minimap.enabled": true,
-    "editor.minimap.maxColumn": 200,
-    "editor.minimap.renderCharacters": false,
-    "editor.minimap.showSlider": "always",
-    "editor.tabSize": 2,
-    "eslint.enable": true,
-    "file.associations": {
-      "Dockerfile-dev": "dockerfile",
-      "Dockerfile-prod": "dockerfile"
-    },
-    "prettier.requireConfig": true,
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
-    "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}",
-    "window.zoomLevel": 1,
-    "workbench.colorTheme": "One Dark Pro",
-    "workbench.editor.enablePreviewFromQuickOpen": false,
-    "workbench.enableExperiments": false,
-    "workbench.iconTheme": "vscode-icons",
-    "workbench.settings.enableNaturalLanguageSearch": false
+  "breadcrumbs.enabled": true,
+  "editor.detectIndentation": true,
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "editor.minimap.enabled": true,
+  "editor.minimap.maxColumn": 200,
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.showSlider": "always",
+  "editor.tabSize": 2,
+  "eslint.enable": true,
+  "file.associations": {
+    "Dockerfile-dev": "dockerfile",
+    "Dockerfile-prod": "dockerfile"
+  },
+  "prettier.requireConfig": true,
+  "redhat.telemetry.enabled": false,
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "telemetry.telemetryLevel": "off",
+  "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}",
+  "window.zoomLevel": 1,
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.enableExperiments": false,
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.settings.enableNaturalLanguageSearch": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
